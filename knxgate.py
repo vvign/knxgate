@@ -9,9 +9,9 @@ cmd =  str(sys.argv[2])
 actuator =  str(sys.argv[3])
 
 #DEBUG ARGUMENT
-#print "linea:" + line1
-#print "attuatore:" + actuator
-#print "comando:" + cmd
+#print "line:" + line1
+#print "actuator:" + actuator
+#print "command:" + cmd
 
 ll = "@D" + line1
 scr = "@w" + cmd + actuator
