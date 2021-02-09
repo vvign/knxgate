@@ -37,6 +37,7 @@ Sending command between Python script you will show Telegram like this:
 The telegram help you identifying the argument needed by script to activate what you need on KNX BUS:
 
 Example:
+    
     0D: Line Address (Argument 1)
     C1: Device Address (Argument 3)
     81: ON/OFF Command (Argument 2)
