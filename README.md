@@ -1,5 +1,5 @@
 # knxgate
-Serial Knxgate Python Integration
+Serial Knxgate Python Integration on Linux
 
 This Python Script permit to send command between serial usb UART Module knxgate (http://guidopic.altervista.org/alter/knxgate.html) to KNX Vimar bus.
 The script accept 3 arguments.
@@ -7,9 +7,9 @@ The script accept 3 arguments.
 Usage:
 python3 /config/knxgate.py 0E 1 2A
 
-1st argument: Line Address
-2nd argument: ON/OFF Command
-3d argument:  Device Address
+    1st argument: Line Address
+    2nd argument: ON/OFF Command
+    3d argument:  Device Address
 
 Connecting through serial you will be able to identify argument sniffing telegrams:
 
@@ -30,9 +30,11 @@ KNX[3]: CC
 KNX[4]: B0 10 02 00 AA 69 03 D6 01 C9 40 09 2D 00 E5
 KNX[5]: CC
 
-Sending command between Python script will show Telegram like this:
+Sending command between Python script you will show Telegram like this:
 
 Snd[09]: B0 10 0C 0D C1 E1 00 81 FF k
+
+The telegram help you identifying the argument needed by script to activate what you need on KNX BUS:
 
 Example:
 0D: Line Address (Argument 1)
@@ -68,6 +70,12 @@ You can also integrate HA with Alexa (https://indomus.it/guide/integrare-gratuit
 
 In HA you can create automation/group or also you can use Alexa app to easily manage knx devices.
 
+Adding this configuration in HA:
 
+sensor:
 
-The telegram help you identifying the argument needed by script to activate what you need on KNX BUS
+  - platform: serial
+    baudrate: 115200
+    serial_port: /dev/ttyACM0
+
+can help you to analyze telegram directly by the User Interface in realtime.
